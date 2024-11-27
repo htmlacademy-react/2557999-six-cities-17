@@ -1,11 +1,19 @@
+import React, { useState } from 'react';
 import MainPage from '../pages/main-page/main-page';
-import { CardSettings } from '../card/card-settings';
 
 function App(): JSX.Element {
+  const [currentCity, setCurrentCity] = useState<string>('Amsterdam');
+
+  const onCityChange = (city: string) => {
+    setCurrentCity(city);
+  };
+
   return (
     <MainPage
-      CardCount={CardSettings.CardCount}
-      AllCards={CardSettings.AllCards}
+      cardCount={5}
+      allCards={25}
+      currentCity={currentCity}
+      onCityChange={onCityChange}
     />
   );
 }

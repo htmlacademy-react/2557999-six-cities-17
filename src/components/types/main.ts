@@ -1,4 +1,6 @@
 export type MainPageProps = {
-    CardCount: number,
-    AllCards: number
+    cardCount: number;
+    allCards: number;
+    currentCity: string;
+    onCityChange: (city: string) => void;
 }

@@ -11,15 +11,15 @@ function MainEmptyPage(): JSX.Element {
         <div className="tabs">
           <section className="locations container">
             <ul className="locations__list tabs__list">
-              {cities.map((City) => (
-                <li key={City} className="locations__item">
+              {cities.map((cityName) => (
+                <li key={cityName} className="locations__item">
                   <a
                     className={`locations__item-link tabs__item ${
-                      City === 'Amsterdam' ? 'tabs__item--active' : ''
+                      cityName === 'Amsterdam' ? 'tabs__item--active' : ''
                     }`}
                     href="#"
                   >
-                    <span>{City}</span>
+                    <span>{cityName}</span>
                   </a>
                 </li>
               ))}

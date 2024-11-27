@@ -1,9 +1,9 @@
 export type Card = {
-    isPremium: boolean,
-    isFavorite: boolean,
-    name: string,
-    type: string,
-    img: any
-    price: number,
-    rating: number,
+    isPremium: boolean;
+    isFavorite: boolean;
+    name: string;
+    type: string;
+    img: string;
+    price: number;
+    rating: number;
     }
