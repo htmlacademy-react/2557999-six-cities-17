@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import MainPage from '../pages/main-page/main-page';
 
 function App(): JSX.Element {
