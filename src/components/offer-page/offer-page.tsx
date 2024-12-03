@@ -17,7 +17,7 @@ export const allCards: Card[] = [
   {
     isPremium: false,
     isFavorite: true,
-    name: 'Cozy studio in Berlin',
+    name: 'Cozy studio in Cologne',
     type: 'Studio',
     img: 'img/studio-01.jpg',
     price: 80,
@@ -25,21 +25,41 @@ export const allCards: Card[] = [
     cardType: 'cities__card',
     city: 'Cologne',
   },
+  {
+    isPremium: false,
+    isFavorite: true,
+    name: 'Canal View Prinsengracht',
+    type: 'Apartment',
+    img: 'img/apartment-02.jpg',
+    price: 80,
+    rating: 4.2,
+    cardType: 'cities__card',
+    city: 'Amsterdam',
+  },
+  {
+    isPremium: true,
+    isFavorite: false,
+    name: 'Nice, cozy, warm big bed apartment',
+    type: 'Studio',
+    img: 'img/apartment-03.jpg',
+    price: 180,
+    rating: 5,
+    cardType: 'cities__card',
+    city: 'Amsterdam',
+  },
 ];
 
-const OfferPage: React.FC = () => {
-  return (
-    <main className="page__main page__main--offer">
-      <section className="offer">
-        <h1 className="offer__title">Available Offers</h1>
-        <div className="offer__list">
-          {allCards.map((offer) => (
-            <PlaceCard key={offer.name} card={offer} />
-          ))}
-        </div>
-      </section>
-    </main>
-  );
-};
+const OfferPage: React.FC = () => (
+  <main className="page__main page__main--offer">
+    <section className="offer">
+      <h1 className="offer__title">Available Offers</h1>
+      <div className="offer__list">
+        {allCards.map((offer) => (
+          <PlaceCard key={offer.name} card={offer} />
+        ))}
+      </div>
+    </section>
+  </main>
+);
 
 export default OfferPage;

@@ -1,9 +1,7 @@
-import React from 'react';
 import PlaceCard from '../../card/card';
 import Header from '../../header/header';
 import { City } from '../../types/city';
 import { MainPageProps } from '../../types/main';
-import { allCards } from '../../offer-page/offer-page';
 
 function MainPage({
   allCards, // Здесь allCards передается как пропс
@@ -11,7 +9,6 @@ function MainPage({
   onCityChange,
 }: MainPageProps): JSX.Element {
   if (!Array.isArray(allCards)) {
-    console.error('allCards должен быть массивом объектов Card', allCards);
     return <div>Error: invalid data format for cards</div>;
   }
 
