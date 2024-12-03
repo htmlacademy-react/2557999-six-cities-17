@@ -1,5 +1,8 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
+import { allCards } from '../offer-page/offer-page';
 import MainPage from '../pages/main-page/main-page';
+import NotFoundPage from '../not-found-page/not-found-page';
 
 function App(): JSX.Element {
   const [currentCity, setCurrentCity] = useState<string>('Amsterdam');
@@ -9,12 +12,23 @@ function App(): JSX.Element {
   };
 
   return (
-    <MainPage
-      cardCount={5}
-      allCards={25}
-      currentCity={currentCity}
-      onCityChange={onCityChange}
-    />
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MainPage
+              cardCount={allCards.length} // Переходите от числа к количеству карточек
+              allCards={allCards} // Передаем массив allCards
+              currentCity={currentCity}
+              onCityChange={onCityChange}
+            />
+          }
+        />
+
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Router>
   );
 }
 
