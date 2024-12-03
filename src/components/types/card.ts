@@ -6,4 +6,6 @@ export type Card = {
     img: string;
     price: number;
     rating: number;
+    cardType: "cities__card" | "favorites__card";
+    city: string;
     }
