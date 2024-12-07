@@ -5,7 +5,7 @@ const NotFoundPage = () => (
     <h1>404 - Страница не найдена</h1>
     <p>Страница, которую ты ищешь - не существует.</p>
     <Link
-      to="/"
+      to="/main"
       style={{
         display: 'inline-block',
         padding: '10px 15px',

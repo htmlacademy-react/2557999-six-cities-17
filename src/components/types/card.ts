@@ -1,4 +1,5 @@
 export type Card = {
+    id: string;
     isPremium: boolean;
     isFavorite: boolean;
     name: string;

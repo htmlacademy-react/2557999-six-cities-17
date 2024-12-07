@@ -1,6 +1,6 @@
 import Header from '../../header/header';
 
-export default function Favorities(): JSX.Element {
+export default function Favorites(): JSX.Element {
   return (
     <div className="page">
       <Header />
