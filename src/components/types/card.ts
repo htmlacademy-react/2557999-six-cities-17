@@ -1,4 +1,5 @@
 export type Card = {
+    id: string;
     isPremium: boolean;
     isFavorite: boolean;
     name: string;
@@ -6,4 +7,6 @@ export type Card = {
     img: string;
     price: number;
     rating: number;
+    cardType: 'cities__card' | 'favorites__card';
+    city: string;
     }
