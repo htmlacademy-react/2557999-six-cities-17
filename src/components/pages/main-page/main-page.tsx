@@ -1,15 +1,15 @@
-import PlaceCard from '../../card/card';
 import Header from '../../header/header';
 import { City } from '../../types/city';
 import { MainPageProps } from '../../types/main';
+import OffersList from '../../offers-list/offers-list';
 
 function MainPage({
-  allCards, // Здесь allCards передается как пропс
+  allCards,
   currentCity,
   onCityChange,
 }: MainPageProps): JSX.Element {
   if (!Array.isArray(allCards)) {
-    return <div>Error: invalid data format for cards</div>;
+    return <div>Ошибка: недопустимый формат данных</div>;
   }
 
   const filteredCards = allCards.filter((card) => card.city === currentCity);
@@ -47,11 +47,7 @@ function MainPage({
             <b className="places__found">
               {filteredCards.length} places to stay in {currentCity}
             </b>
-            <div className="cities__places-list places__list tabs__content">
-              {filteredCards.map((card) => (
-                <PlaceCard key={card.name} card={card} />
-              ))}
-            </div>
+            <OffersList cards={filteredCards} />
           </section>
           <div className="cities__right-section">
             <section className="cities__map map" />
