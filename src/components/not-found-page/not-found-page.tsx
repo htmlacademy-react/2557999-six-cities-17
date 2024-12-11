@@ -2,10 +2,9 @@ import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => (
   <div style={{ textAlign: 'center', marginTop: '50px' }}>
-    <h1>404 - Страница не найдена</h1>
-    <p>Страница, которую ты ищешь - не существует.</p>
+    <h1>404 - Page not found!</h1>
     <Link
-      to="/main"
+      to="/Main"
       style={{
         display: 'inline-block',
         padding: '10px 15px',
@@ -22,7 +21,7 @@ const NotFoundPage = () => (
       onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#0056b3')}
       onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#007bff')}
     >
-      Вернуться на главную
+      Back to main
     </Link>
   </div>
 );

@@ -1,20 +1,49 @@
 import React from 'react';
 import { Card } from '../types/card';
+import { Link } from 'react-router-dom';
 
 export type PlaceCardProps = {
   card: Card;
+  onCardHover?: (cardId: string | null) => void;
 };
 
-export const PlaceCard: React.FC<PlaceCardProps> = ({ card }) => {
-  const { cardType, isPremium, isFavorite, name, type, img, price, rating } =
-    card;
+export const PlaceCard: React.FC<PlaceCardProps> = ({ card, onCardHover }) => {
+  const {
+    cardType,
+    isPremium,
+    isFavorite,
+    name,
+    type,
+    img,
+    price,
+    rating,
+    id,
+  } = card;
+
+  const handleMouseEnter = () => {
+    if (onCardHover) {
+      onCardHover(id);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (onCardHover) {
+      onCardHover(null);
+    }
+  };
 
   return (
-    <article className={`${cardType} place-card`}>
+    <article
+      className={`${cardType} place-card`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {isPremium && <div className="place-card__mark">Premium</div>}
       {isFavorite && <div className="place-card__favorite"></div>}
       <div className={`${cardType}__image-wrapper place-card__image-wrapper`}>
-        <a href="#">
+        <Link to={`/offer/${id}`}>
+          {' '}
+          {}
           <img
             className="place-card__image"
             src={img}
@@ -22,7 +51,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ card }) => {
             height="200"
             alt={name}
           />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -38,7 +67,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ card }) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{name}</a>
+          <Link to={`/offer/${id}`}>{name}</Link> {}
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
