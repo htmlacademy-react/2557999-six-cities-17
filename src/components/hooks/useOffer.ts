@@ -7,7 +7,7 @@ function useOffer(id: string): Card | null {
 
   useEffect(() => {
     if (id) {
-      const foundOffer = allCards.find((card: Card) => card.id === id) as Card | undefined;
+      const foundOffer = allCards.find((card) => card.id === id);
       setOffer(foundOffer || null);
     }
   }, [id]);
