@@ -2,6 +2,7 @@ import Header from '../../header/header';
 import { City } from '../../types/city';
 import { MainPageProps } from '../../types/main';
 import OffersList from '../../offers-list/offers-list';
+import Map from '../../map/map';
 
 function MainPage({
   allCards,
@@ -50,7 +51,9 @@ function MainPage({
             <OffersList cards={filteredCards} />
           </section>
           <div className="cities__right-section">
-            <section className="cities__map map" />
+            <section className="cities__map map">
+              <Map offers={filteredCards} />
+            </section>
           </div>
         </div>
       </div>

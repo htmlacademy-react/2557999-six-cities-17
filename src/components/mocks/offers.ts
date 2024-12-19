@@ -1,29 +1,35 @@
-import { Card } from '../types/card';
-
 export const allCards: Card[] = [
   {
     id: '1',
     isPremium: true,
     isFavorite: false,
-    name: 'Beautiful apartment in Paris',
+    name: 'Beautiful apartment in Amsterdam',
     type: 'Apartment',
     img: 'img/apartment-01.jpg',
     price: 120,
     rating: 4.5,
     cardType: 'cities__card',
-    city: 'Paris',
+    city: 'Amsterdam',
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
+    },
   },
   {
     id: '2',
     isPremium: false,
     isFavorite: true,
-    name: 'Cozy studio in Cologne',
+    name: 'Cozy studio in Amsterdam',
     type: 'Studio',
     img: 'img/studio-01.jpg',
     price: 80,
     rating: 4.2,
     cardType: 'cities__card',
-    city: 'Cologne',
+    city: 'Amsterdam',
+    location: {
+      latitude: 52.3609553943508,
+      longitude: 4.85309666406198,
+    },
   },
   {
     id: '3',
@@ -36,6 +42,10 @@ export const allCards: Card[] = [
     rating: 4.2,
     cardType: 'cities__card',
     city: 'Amsterdam',
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
+    },
   },
   {
     id: '4',
@@ -48,5 +58,9 @@ export const allCards: Card[] = [
     rating: 5,
     cardType: 'cities__card',
     city: 'Amsterdam',
+    location: {
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
+    },
   },
 ];
