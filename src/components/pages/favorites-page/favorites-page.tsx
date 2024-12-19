@@ -1,12 +1,12 @@
-import { allCards } from '../../mocks/offers';
 import Header from '../../header/header';
+import { Card } from '../../types/card';
 
 type FavoritesProps = {
-  cards: typeof allCards;
+  cards: Card[];
 };
 
 export default function Favorites({ cards }: FavoritesProps): JSX.Element {
-  const cities = [...new Set(cards.map((card) => card.city))];
+  const cities = [...new Set(cards.map((card: Card) => card.city))];
 
   return (
     <div className="page">
@@ -16,8 +16,10 @@ export default function Favorites({ cards }: FavoritesProps): JSX.Element {
           <section className="favorites">
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
-              {cities.map((city) => {
-                const cityCards = cards.filter((card) => card.city === city);
+              {cities.map((city: string) => {
+                const cityCards = cards.filter(
+                  (card: Card) => card.city === city
+                );
                 return (
                   <li key={city} className="favorites__locations-items">
                     <div className="favorites__locations locations locations--current">
@@ -28,7 +30,7 @@ export default function Favorites({ cards }: FavoritesProps): JSX.Element {
                       </div>
                     </div>
                     <div className="favorites__places">
-                      {cityCards.map((card) => (
+                      {cityCards.map((card: Card) => (
                         <article
                           key={card.id}
                           className="favorites__card place-card"
