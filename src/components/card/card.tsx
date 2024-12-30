@@ -42,8 +42,6 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ card, onCardHover }) => {
       {isFavorite && <div className="place-card__favorite"></div>}
       <div className={`${cardType}__image-wrapper place-card__image-wrapper`}>
         <Link to={`/offer/${id}`}>
-          {' '}
-          {}
           <img
             className="place-card__image"
             src={img}

@@ -9,4 +9,8 @@ export type Card = {
     rating: number;
     cardType: 'cities__card' | 'favorites__card';
     city: string;
-    }
+    location: {
+      latitude: number;
+      longitude: number;
+    };
+  };
